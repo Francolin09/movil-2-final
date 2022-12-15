@@ -35,7 +35,7 @@ export class IndicadoresPage implements OnInit {
       this.utm=respuesta.utm.valor;
       this.indicadores = respuesta;
       this.euro = respuesta.euro.valor
-      console.log('resssp indicadores',this.indicadores)
+      console.log('resssp indicadoresaa',this.indicadores)
     },
     (error)=>{
       console.log(error);
