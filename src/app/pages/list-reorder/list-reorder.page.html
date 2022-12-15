@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">List-Reorder</ion-title>
+
+    <ion-button slot="end" (click)="reorderDisabled = !reorderDisabled"> <!--Lo que se hace aca es indicar que cuando se haga click la variable reorderDisable tomara el valor contrario al que tenia, por tanto si era true sera false y cuando sea false será true-->
+      Toogle
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-reorder-group [disabled]="reorderDisabled" (ionItemReorder)=" doReorder($event)">   <!-- aca la propiedad disabled ya tendrá un valor asignado pero cada vez que se presiona el boton de arriba tomará el nuevo valor asignado arriba de la variable reorderDisabled, de esa forma se activa y desactiva la funcionalidad-->
+
+      <ion-item *ngFor="let personaje of personajes">
+        <ion-label>{{personaje}}</ion-label>
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+      
+    </ion-reorder-group>
+    
+  </ion-list>
+
+</ion-content>

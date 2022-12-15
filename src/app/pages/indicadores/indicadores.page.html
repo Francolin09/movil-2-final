@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="register" text="" color="primary"></ion-back-button> <!--Si no existen paginas anteriores regr4esara al inicio -->
+   </ion-buttons>
+    <ion-title>indicadoresss</ion-title>
+   
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+   
+    <ion-item>
+      <ion-label>CLP:</ion-label>
+      <ion-input type="text" placeholder="CLP" name="CLP" (ionChange)="onSearchChange($event)" ></ion-input>
+    </ion-item>
+  
+
+      <ion-item >
+
+        <ion-card color="medium">
+          <ion-card-header>
+            <ion-card-title>Dolar:</ion-card-title>
+            <ion-card-subtitle *ngIf="!valorBuscar">${{dolar}}</ion-card-subtitle>
+            <ion-card-subtitle *ngIf="valorBuscar>0">${{(valorBuscar/dolar).toFixed(2)}}</ion-card-subtitle>
+          </ion-card-header>
+        
+         
+        </ion-card>
+       
+        
+      </ion-item>
+
+      <ion-item >
+       
+        <ion-card color="medium">
+          <ion-card-header>
+            
+            <ion-card-title>Euro:</ion-card-title>
+            <ion-card-subtitle *ngIf="!valorBuscar">${{euro}}</ion-card-subtitle>
+            <ion-card-subtitle *ngIf="valorBuscar>0">${{(valorBuscar/euro).toFixed(2)}}</ion-card-subtitle>
+            
+          </ion-card-header>
+        
+         
+        </ion-card>
+      </ion-item>
+
+      <ion-item >
+       
+        <ion-card color="medium">
+          <ion-card-header>
+            
+            <ion-card-title>UF:</ion-card-title>
+            <ion-card-subtitle *ngIf="!valorBuscar">${{uf}}</ion-card-subtitle>
+            <ion-card-subtitle *ngIf="valorBuscar>0" >${{(valorBuscar/uf).toFixed(2)}}</ion-card-subtitle>
+            
+          </ion-card-header>
+        
+          
+        </ion-card>
+      </ion-item>
+
+      <ion-item >
+       
+        <ion-card color="medium">
+          <ion-card-header>
+            
+            <ion-card-title>UTM:</ion-card-title>
+            <ion-card-subtitle *ngIf="!valorBuscar">${{utm}}</ion-card-subtitle>
+            <ion-card-subtitle *ngIf="valorBuscar>0">${{(valorBuscar/utm).toFixed(2)}}</ion-card-subtitle>
+          </ion-card-header>
+        
+          
+        </ion-card>
+      </ion-item>
+
+      <ion-item >
+       
+        <ion-card color="medium">
+          <ion-card-header>
+            
+            <ion-card-title>Bitcoin:</ion-card-title>
+            <ion-card-subtitle *ngIf="!valorBuscar">${{bitcoin}}</ion-card-subtitle>
+            <ion-card-subtitle *ngIf="valorBuscar>0">${{(valorBuscar/bitcoin).toFixed(2)}}</ion-card-subtitle>
+            
+          </ion-card-header>
+        
+          
+        </ion-card>
+      </ion-item>
+      
+
+      
+    
+  </ion-list>
+
+  
+</ion-content>

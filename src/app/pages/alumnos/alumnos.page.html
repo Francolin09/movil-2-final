@@ -1,0 +1,28 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Search</ion-title>
+  </ion-toolbar>
+
+  <ion-searchbar placeholder="Buscar por nombre" 
+                 inputmode="text"
+                 (ionChange)="onSearchChange($event)"
+                 [debounce]="250"
+                 
+                 animated>
+  </ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item  *ngFor="let user of users | filtro2: textoBuscar">
+      <ion-avatar slot="start">
+        <img src="../../../assets/icon/usuariounknown.png">
+        </ion-avatar>
+      <ion-label><h2>{{nombre}}</h2> <h3>{{apellido}}</h3></ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
